@@ -1,0 +1,64 @@
+.contact-me {
+    padding: 2rem;
+    background-color: #1e2329;
+    text-align: center;
+  }
+  
+  .contact-me-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-me h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 
+    0 0px 10px rgba(233, 233, 233, 0.8), 
+    0 4px 20px rgb(255, 255, 255),  
+    0 6px 12px rgba(42, 42, 42, 0.4); 
+  }
+  
+  .contact-me-form {
+    margin: 1rem 0;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: rgb(255, 255, 255);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #fffb00;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .submit-button {
+    background-color: #ffcc00;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #ffee00;
+  }
+
+  
