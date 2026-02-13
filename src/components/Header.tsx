@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     <header className="header">
     <nav className="nav">
       <a href="#about" className="logo" onClick={handleMenuClose}>
-        <h1 className="logo">Alex</h1>
+        <h1 className="logo">Zai</h1>
       </a>
      <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
         <a href="#projects" onClick={handleMenuClose}>Projects</a>

@@ -28,7 +28,7 @@
     object-fit: cover;
   }
   .project-details {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .project-title {
     color: #ffcc00;
@@ -70,4 +70,11 @@
 
 .visit-button:hover {
   background: #4338ca;
+}
+.project-video {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: black;
 }

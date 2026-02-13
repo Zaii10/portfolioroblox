@@ -1,49 +1,94 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { easeOut } from "framer-motion";
 import "./Skills.css";
 
 const skills = [
-  { name: "", icon: "/html5-logo.jpg" },
-  { name: "", icon: "/css.jpg" },
-  { name: "", icon: "/js.jpg" },
-  { name: "", icon: "/sass.jpg" },
-  { name: "", icon: "/React.jpg" },
-  { name: "", icon: "/node.jpg" }, 
-  { name: "", icon: "/python-logo.jpg" },
-  { name: "", icon: "/Git.jpg" },
-  { name: "", icon: "/mysql.jpg" },
-  { name: "", icon: "/php.jpg" },
-  { name: "", icon: "/ts.jpg" },
-  { name: "", icon: "/lua.jpg" },
-  { name: "", icon: "/blender.jpg" },
-
-
-
+  { name: "HTML5", icon: "/html5-logo.jpg" },
+  { name: "CSS3", icon: "/css.jpg" },
+  { name: "JavaScript", icon: "/js.jpg" },
+  { name: "Sass", icon: "/sass.jpg" },
+  { name: "React", icon: "/React.jpg" },
+  { name: "Node.js", icon: "/node.jpg" },
+  { name: "Python", icon: "/python-logo.jpg" },
+  { name: "Git", icon: "/Git.jpg" },
+  { name: "MySQL", icon: "/mysql.jpg" },
+  { name: "PHP", icon: "/php.jpg" },
+  { name: "TypeScript", icon: "/ts.jpg" },
+  { name: "Lua (Roblox)", icon: "/lua.jpg" },
+  { name: "Blender", icon: "/blender.jpg" },
 ];
+
+// Variants (como TweenService 😎)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: easeOut,
+    },
+  },
+};
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="skills">
-      <h2 className="section-title2">Skills</h2>
-      <div className="skills-grid">
+    <motion.section
+      id="skills"
+      className="skills"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: easeOut }}
+      viewport={{ once: true }}
+    >
+      <motion.h2
+        className="section-title2"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Skills
+      </motion.h2>
+
+      <motion.div
+        className="skills-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {skills.map((skill, index) => (
-          <div key={index} className="skill-card">
+          <motion.div
+            key={index}
+            className="skill-card"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+          >
             <div className="skill-icon">
-              {/* Renderiza un ícono JSX o una imagen según el tipo */}
-              {typeof skill.icon === "string" ? (
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="icon-image"
-                />
-              ) : (
-                skill.icon
-              )}
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className="icon-image"
+              />
             </div>
             <span className="skill-name">{skill.name}</span>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

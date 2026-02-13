@@ -34,12 +34,10 @@
   }
   @media (min-width: 768px) {
     .about-content {
-      grid-template-columns: 1fr 2fr;
+
       text-align: left;
     }
-    .about {
-      height: 36rem;
-    }
+
   }
   @media(max-width: 500px){
     .section-title {

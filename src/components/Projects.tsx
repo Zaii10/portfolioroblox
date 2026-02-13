@@ -33,9 +33,9 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Respawn-System',
-    description: 'System to handle the respawn of mobs',
-    image: '/respawn1.png',
+    title: 'Event-System',
+    description: 'System to handle events and rewards based on requirements',
+    video: '/video2.mp4',
     link: '#',
   },
     {
@@ -54,9 +54,9 @@ const projects = [
   },
         {
     id: 6,
-    title: 'ProfileStore',
-    description: 'ProfileStore System',
-    image: '/ProfileStore.png',
+    title: 'Plot & Resource Collection System with NPCs',
+    description: 'System to handle plot and resource collection with NPCs',
+    video: '/video1.mp4',
     link: '#',
   },
 
@@ -76,15 +76,27 @@ const Projects: React.FC = () => {
 
         {projects.map((project) => (
           <div key={project.id} className="project-card">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-              onError={(e: any) => {
-                e.target.src =
-                  'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe';
-              }}
-            />
+{project.video ? (
+  <video
+    className="project-video"
+    src={project.video}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+) : (
+  <img
+    src={project.image}
+    alt={project.title}
+    className="project-image"
+    onError={(e: any) => {
+      e.currentTarget.src =
+        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe';
+    }}
+  />
+)}
+
             <div className="project-details">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>

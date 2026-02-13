@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-text">© 2025 Alex Developer. All rights reserved.</div>
+        <div className="footer-text">© Zai Developer. All rights reserved.</div>
         <div className="footer-icons">
           <a href="#" className="footer-icon">
             <FaGithub />
